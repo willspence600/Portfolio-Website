@@ -400,6 +400,7 @@ header {
     opacity: 0;
     transition: opacity 250ms linear;
     user-select: none;
+    pointer-events: none;
 }
 
 .portfolio__item:hover h3,
