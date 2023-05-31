@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta chatset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Will Spence Portfolio Website</title>
+            <link rel="stylesheet"
+            href="cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" >
+            <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" 
+            integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
+            <!-- Update these with your own fonts -->
+            <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
+            <link rel="stylesheet" href="style.css">
+        </head>
+
+        <body>
+            <header>
+                <h3 class="home">
+                    <a href="index.html">Home</a>
+                </h3>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                        <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+                        <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="intro">
+                <h2 class="section__title section__title--intro"><strong>AI Handwritten Digit Classification:</strong>Classifying Numbers Using Neural Networks</h2>
+                <p class="section__subtitle section__subtitle--intro"> </p>
+                <img src="img/mnist.png" alt="The application detecting a user's pupils" class="intro__img">
+            </section>
+
+            <div class="portfolio-item-description">
+                <h3>Overview</h3>
+                    <p>
+                        In January of 2023, I had the opportunity to compete in the QHACKS hackathon at Queen’s University. I had the idea to create a web application which can detect concussions using computer vision and questionnaires. The inspiration for the project came from playing contact sports in high school: sometimes, players would receive head injuries and not undergo a proper concussion examination. A concussion could then go undetected - possibly resulting in cognitive issues in the future
+                    </p>
+                
+                <h3>How It Works</h3>
+                <img src="img/ConcussionMD.gif" alt="Gif of concussion algorithm" class="project__img">
+                <p>
+                    The project consists of a web page that has a concussion diagnosis algorithm and a concussion diagnosis form. The web page can open the camera window, which allows the user to record video of their pupils. This video undergoes analysis by the concussion algorithm at the back end of the website. The algorithm compares the radii of the patient's pupils over time, determining if the pupils dilate at the same rate. After analysis, the patient completes a questionnaire asking about their symptoms. With this data, an estimation for concussion diagnosis can be provided. 
+                </p>
+                
+                <h3>What I Learned</h3>
+                <p>
+                    I worked with a team of four to create the application in the span of 36 hours, with my role being the developer for the pupil tracking algorithm. I learned how to use the Python library OpenCV, applying filters to the video feed to estimate the location and size of the pupils at each frame. Although it wasn't my primary role, I also learned the basics of connecting the backend and frontend of a website using Flask, as well as video encoding for transferring data.
+                    Although the website's functionality wasn't finished within the 36 hours, the project was a success. My team won the DDIQC Award for increasing healthcare access to rural and remote areas.
+                </p>
+                <h3 class="project__link"><a href="https://devpost.com/software/concussionmd" class="project__link">Click here to see the hackathon submission</a></h3>
+                <h3><a href="https://winofaston.wixsite.com/concussionmd" class="project__link">Click here to see the current version of the website</a></h3>
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="footer">
+                <a href="mailto:willspence.tutoring@gmail.com" class="footer__link">willspence.tutoring@gmail.com</a>
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.linkedin.com/in/willspence600/">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://github.com">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+
+            <script src="script.js"></script>
+            
+        </body>
+    </html> 

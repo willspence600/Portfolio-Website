@@ -388,12 +388,30 @@ header {
 .portfolio__item {
     background: var(--clr-accent);
     overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.portfolio__item h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 250ms linear;
+    user-select: none;
+}
+
+.portfolio__item:hover h3,
+.portfolio__item:focus h3 {
+    opacity: 1; /* Change opacity to 1 on hover or focus */
 }
 
 .portfolio__img {
     transition: 
         transform 750ms cubic-bezier(.5, 0, .5, 1),
         opacity 250ms linear;
+    height: 300px;
 }
 
 .portfolio__item:focus {
@@ -452,6 +470,7 @@ header {
     padding: .5em;
 }
 
+/* Portfolio pages */
 .portfolio-item-description {
     padding: 0 2em 2em;
     max-width: 1000px;
@@ -462,4 +481,17 @@ header {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.project__img {
+    box-shadow: var(--bs);
+    float: right;
+    max-width: 300px;
+    margin-left: 1em;
+    margin-top: 2em;
+}
+
+.project__link {
+    margin-bottom: 20px;
+    color: var(--clr-dark);
 }

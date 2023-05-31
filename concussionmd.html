@@ -46,15 +46,20 @@
                     <p>
                         In January of 2023, I had the opportunity to compete in the QHACKS hackathon at Queen’s University. I had the idea to create a web application which can detect concussions using computer vision and questionnaires. The inspiration for the project came from playing contact sports in high school: sometimes, players would receive head injuries and not undergo a proper concussion examination. A concussion could then go undetected - possibly resulting in cognitive issues in the future
                     </p>
-                <img src="" alt="">
+                
+                <h3>How It Works</h3>
+                <img src="img/ConcussionMD.gif" alt="Gif of concussion algorithm" class="project__img">
                 <p>
-                    Voluptatibus, soluta blanditiis! Incidunt ea unde itaque illo molestiae eligendi 
-                    sint culpa nobis voluptas sapiente voluptate, magnam ipsum eius earum?
+                    The project consists of a web page that has a concussion diagnosis algorithm and a concussion diagnosis form. The web page can open the camera window, which allows the user to record video of their pupils. This video undergoes analysis by the concussion algorithm at the back end of the website. The algorithm compares the radii of the patient's pupils over time, determining if the pupils dilate at the same rate. After analysis, the patient completes a questionnaire asking about their symptoms. With this data, an estimation for concussion diagnosis can be provided. 
                 </p>
+                
+                <h3>What I Learned</h3>
                 <p>
-                    Voluptatibus, soluta blanditiis! Incidunt ea unde itaque illo molestiae eligendi 
-                    sint culpa nobis voluptas sapiente voluptate, magnam ipsum eius earum?
+                    I worked with a team of four to create the application in the span of 36 hours, with my role being the developer for the pupil tracking algorithm. I learned how to use the Python library OpenCV, applying filters to the video feed to estimate the location and size of the pupils at each frame. Although it wasn't my primary role, I also learned the basics of connecting the backend and frontend of a website using Flask, as well as video encoding for transferring data.
+                    Although the website's functionality wasn't finished within the 36 hours, the project was a success. My team won the DDIQC Award for increasing healthcare access to rural and remote areas.
                 </p>
+                <h3 class="project__link"><a href="https://devpost.com/software/concussionmd" class="project__link">Click here to see the hackathon submission</a></h3>
+                <h3><a href="https://winofaston.wixsite.com/concussionmd" class="project__link">Click here to see the current version of the website</a></h3>
             </div>
 
 
