@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta chatset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Will Spence Portfolio Website</title>
+            <link rel="stylesheet"
+            href="cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" >
+            <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" 
+            integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
+            <!-- Update these with your own fonts -->
+            <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
+            <link rel="stylesheet" href="style.css">
+        </head>
+
+        <body>
+            <header>
+                <h3 class="home">
+                    <a href="index.html">Home</a>
+                </h3>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                        <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+                        <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="intro">
+                <h2 class="section__title section__title--intro">
+                    <strong>Computer Vision Concussion Detector</strong> 
+                </h2>
+                <p class="section__subtitle section__subtitle--intro"> </p>
+                <img src="img/mediapipe.jpg" alt="The application detecting a user's pupils" class="intro__img">
+            </section>
+
+            <div class="portfolio-item-description">
+                <h3>Overview</h3>
+                    <p>
+                        In January of 2023 I worked with the Queen’s Engineering Society Software Development Team to learn more about computer vision. We set a goal to learn more about Mediapipe, an open-source framework from Google which can be used to estimate the key points of someone’s body. As someone who enjoys living an active lifestyle, I chose to apply Mediapipe to bicep curls, making an application which can count reps and track the joint angle of the user’s elbow.
+                    </p>
+                
+                <h3>How It Works</h3>
+                <img src="img/bicep-curl.gif" alt="Gif of concussion algorithm" class="project__img">
+                <p>
+                    The application works through the user’s webcam, where they stand in front of the camera at a distance sufficient for Mediapipe to estimate the location of their joints. Mediapipe creates a 3D reconstruction of where the user’s joints are at each frame of the video feed. Through this construction, it’s easy to use basic trigonometry to determine the angle between the hand and shoulder at each frame. If the angle is below 30 degrees, the curl repetition is considered to be in the “down” stage. If the angle is greater than 160 degrees, it’s considered to be in the “up” stage. For a single repetition to be complete, it must begin in the “down” stage and eventually reach the “up” stage. The number of completed repetitions, as well as the stage of the current rep, is displayed in the top left corner of the video feed.
+                </p>
+                
+                <h3>What I Learned</h3>
+                <p>
+                    This project was my first time experimenting with computer vision. To learn how to use Mediapipe, I had to consult the documentation from Google, which is something I had rarely done in my previous programming endeavors. It was also my first time using a Jupyter Notebook, which is a useful tool to execute Python code section by section. I made use of the Jupyter Notebook markup cells to comment my code thoroughly, also explaining sections of the documentation with images. I will definitely be using Jupyter Notebooks in future machine learning projects, and understanding the documentation of a new library is an extremely valuable skill. This project served as an introduction to both of these concepts, and I have felt more comfortable learning new skills ever since.
+                </p>
+                <h3 class="project__link"><a href="https://github.com/QueensDoIT/computer-vision-weightlifting/blob/main/Mediapipe%20Tutorial.ipynb" class="project__link">Click here to see the code</a></h3>
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="footer">
+                <a href="mailto:willspence.tutoring@gmail.com" class="footer__link">willspence.tutoring@gmail.com</a>
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.linkedin.com/in/willspence600/">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://github.com">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+
+            <script src="script.js"></script>
+            
+        </body>
+    </html> 

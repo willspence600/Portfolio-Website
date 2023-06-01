@@ -316,6 +316,9 @@ header {
 .inquiries {
     margin-bottom: 2em;
 }
+.rates {
+    font-size: 2rem;
+}
 
 @media (min-width: 800px) {
     .services {
@@ -412,7 +415,6 @@ header {
     transition: 
         transform 750ms cubic-bezier(.5, 0, .5, 1),
         opacity 250ms linear;
-    height: 300px;
 }
 
 .portfolio__item:focus {

@@ -42,22 +42,23 @@
             <div class="portfolio-item-description">
                 <h3>Overview</h3>
                     <p>
-                        In January of 2023, I had the opportunity to compete in the QHACKS hackathon at Queen’s University. I had the idea to create a web application which can detect concussions using computer vision and questionnaires. The inspiration for the project came from playing contact sports in high school: sometimes, players would receive head injuries and not undergo a proper concussion examination. A concussion could then go undetected - possibly resulting in cognitive issues in the future
+                        In the course APSC 100, I had the opportunity to work with the Queen’s AI Club (QMIND) for the first time. I worked with a team of five students on a project aiming to classify handwritten digits with different machine learning techniques. The methods we used include k-nearest neighbor, convolutional neural networks, and Naïve Bayes Classifier. 
                     </p>
                 
                 <h3>How It Works</h3>
-                <img src="img/ConcussionMD.gif" alt="Gif of concussion algorithm" class="project__img">
                 <p>
-                    The project consists of a web page that has a concussion diagnosis algorithm and a concussion diagnosis form. The web page can open the camera window, which allows the user to record video of their pupils. This video undergoes analysis by the concussion algorithm at the back end of the website. The algorithm compares the radii of the patient's pupils over time, determining if the pupils dilate at the same rate. After analysis, the patient completes a questionnaire asking about their symptoms. With this data, an estimation for concussion diagnosis can be provided. 
+                    The project consists of a graphical user interface (GUI) where the user can draw an image on a sketchpad and have the each AI models each make their predictions. The models were trained using the MNIST dataset, a series of 70,000 28x28 pixel images containing handwritten digits. The training consisted of testing and modifying the models to maximize the accuracy of their guesses, making changes until the accuracy was sufficient.
+                </p>
+                <p>
+                    Our convolutional neural network (CNN) was the most effective model, scoring an accuracy of 97%. The other two models, Naïve Bayes Classifier and k-nearest neighbor, only scored an accuracy of 80% and 75% respectively. These models weren’t as accurate because they aren’t as suitable for this kind of classification problem. However, it was still interesting to learn more about them and see how they held up next to the CNN. We also experimented with combining the models, taking a weighted average of the three. The CNN was weighted higher than the other two models such that the combined model would always take the output of the CNN unless the other two models reached a consensus that differed from the CNN’s. This combination of models had the highest accuracy of all, correctly guessing the digit 98.5% of the time.
                 </p>
                 
                 <h3>What I Learned</h3>
                 <p>
-                    I worked with a team of four to create the application in the span of 36 hours, with my role being the developer for the pupil tracking algorithm. I learned how to use the Python library OpenCV, applying filters to the video feed to estimate the location and size of the pupils at each frame. Although it wasn't my primary role, I also learned the basics of connecting the backend and frontend of a website using Flask, as well as video encoding for transferring data.
-                    Although the website's functionality wasn't finished within the 36 hours, the project was a success. My team won the DDIQC Award for increasing healthcare access to rural and remote areas.
+                    My primary role for this project was the development of the convolutional neural network, mostly working with one other member of the team on this side of the project. I became familiar with the process of machine learning, as well as the components of a neural network. I also gained experience as the lead developer of the graphical user interface using Tkinter in Python, creating a simple yet effective interface to demonstrate the models. At the end of the project, the team constructed a 28-page document including a detailed description of the design process, project planning, results, and several graphs, charts, and images. I took the lead in editing and proofreading the document, and we were proud to receive an A on the final presentation.
                 </p>
-                <h3 class="project__link"><a href="https://devpost.com/software/concussionmd" class="project__link">Click here to see the hackathon submission</a></h3>
-                <h3><a href="https://winofaston.wixsite.com/concussionmd" class="project__link">Click here to see the current version of the website</a></h3>
+                <h3 class="project__link"><a href="https://github.com/willspence600/AI-Handwritten-Digit-Recognition" class="project__link">Click here to see the code</a></h3>
+
             </div>
 
 
