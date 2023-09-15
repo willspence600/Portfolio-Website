@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta chatset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Will Spence Portfolio Website</title>
+            <link rel="stylesheet"
+            href="cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" >
+            <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" 
+            integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
+            <!-- Update these with your own fonts -->
+            <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
+            <link rel="stylesheet" href="style.css">
+        </head>
+
+        <body>
+            <header>
+                <h3 class="home">
+                    <a href="index.html">Home</a>
+                </h3>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                        <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+                        <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="intro">
+                <h2 class="section__title section__title--intro"><strong>NLP Scam Call Detector</strong></h2>
+                <p class="section__subtitle section__subtitle--intro"> </p>
+                <img src="img/scam.jpeg" alt="The MNIST dataset" class="intro__img">
+            </section>
+
+            <div class="portfolio-item-description">
+                <h3>Overview</h3>
+                    <p>
+                        In July, my grandmother received a phone call from an unknown number. The caller claimed to be her grandson, telling her that he was arrested and needed $5000 for bail. Unfortunately, she believed this caller to be me initially, but she knew something wasn’t right. Distressed, she texted me to see if the story she heard was true, and I was able to clear everything up for her and warned her about these types of malicious scams. This inspired me to find a solution for this problem; after searching through some research papers, I found a paper which was able to accurately detect a scam conversation using Natural Language Processing and the k-means clustering algorithm. Using this paper as a resource, I created my own version of the project.
+                    </p>
+                
+                <h3>How It Works</h3>
+                <img src="img/kmeans.gif" alt="Gif of concussion algorithm" class="project__img">
+
+                <p>
+                    To train the model, I used the same dataset as the researchers. It consisted of an Excel spreadsheet containing scam conversations in each column, alternating between the dialogue of the scammer and the victim in each row. Using the Pandas library, I imported each conversation into a Python array, processing them so that each conversation is split into sentences. Using Google’s Universal Sentence Encoder pre-trained transformer model, each sentence was then encoded into a 512-dimensional vector representing their semantic meaning. 
+                </p>
+                <p>
+                    Now, with a set of vectors which represent sentences from scam calls, I used the k-means clustering algorithm to find regions in the vector space which are most likely to be scam related. The algorithm provides the centroids for each cluster, which can be thought of the average semantic meaning of a scam related sentence.
+                </p>
+                <p>
+                    Finally, new input sentences were compared to the centroids by encoding them and taking the inner product between the new vector and each of the calculated centroids. If the semantic meaning of the new sentence is close enough to average semantic meaning of any of the scam calls, a value close to 1 is returned by the inner product. Through experimentation, I found values near 0.65 were typically able to identify scam calls accurately without triggering too many false detections (i.e. a non-scam sentence is classified as a scam).
+                </p>
+                
+                <h3>What I Learned</h3>
+                <p>
+                    This was my first solo machine learning project, and I was able to experiment with many different techniques for the first time. This is the first time I had to clean and process data, learning how to use Pandas to import the conversations to my Python code. I applied the linear algebra understanding I’ve gained through school to learn how sentence embeddings work, also learning what it means to take the inner product of two vectors in a high-dimensional space. Having the research paper as a resource was very helpful, pointing me in the right direction to solve this problem without using anyone else’s code (aside from importing the Universal Sentence Encoder from Tensorflow Hub).                </p>
+                </p>
+                    <!-- <h3 class="project__link"><a href="https://github.com/willspence600/AI-Handwritten-Digit-Recognition" class="project__link">Click here to see the code</a></h3> -->
+
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="footer">
+                <a href="mailto:willspence.tutoring@gmail.com" class="footer__link">willspence.tutoring@gmail.com</a>
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.linkedin.com/in/willspence600/">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://github.com">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+
+            <script src="script.js"></script>
+            
+        </body>
+    </html> 
